@@ -1,7 +1,7 @@
 import React from "react";
 
 function PlantCard({plant}) {
-  return (
+  return <>
     <li className="card">
       <img src={plant.image} alt={plant.name} />
       <h4>{plant.name}</h4>
@@ -12,7 +12,7 @@ function PlantCard({plant}) {
         <button>Out of Stock</button>
       )}
     </li>
-  );
+  </>
 }
 
 export default PlantCard;
