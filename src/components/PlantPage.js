@@ -5,18 +5,23 @@ import Search from "./Search";
 
 const url = "http://localhost:6001/plants";
 function PlantPage() {
+
   const [plant, setPlant] = useState([]);
   console.log(plant);
+  
+  const [ search , setSearch] = useState('')
+
   useEffect(() => {
     fetch(url)
       .then((r) => r.json())
       .then((data) => setPlant(data));
-  }, []); 
+  }, []);
+
   return (
     <main>
       <NewPlantForm plant={plant} setPlant={setPlant} url={url} />
-      <Search />
-      <PlantList plant={plant} />
+      <Search setSearch={setSearch} />
+      <PlantList plant={plant} search={search} />
     </main>
   );
 }

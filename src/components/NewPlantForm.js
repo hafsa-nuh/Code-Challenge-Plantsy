@@ -32,7 +32,6 @@ function NewPlantForm({plant, setPlant, url}) {
     })
     e.target.reset()
   }
- 
 
   return (
     <div className="new-plant-form">
